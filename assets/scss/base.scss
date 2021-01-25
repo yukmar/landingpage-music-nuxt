@@ -1,0 +1,18 @@
+@use "sass:color";
+
+$bgColor: #2f3139;
+$btn-bgPrimary: #105ea3;
+$bgColor-2nd: darken($bgColor, 5%);
+$bgColor-2nd-hover: lighten($bgColor, 10%);
+$input-borderColor: #2d2e3b;
+$fun-wordColor: #c64b7e;
+
+@mixin circle($width, $height, $bgColor, $borderRad, $position1, $val1, $position2, $val2){
+  width: $width;
+  height: $height;
+  background-color: $bgColor;
+  border-radius: $borderRad;
+  #{$position1}: $val1;
+  #{$position2}: $val2;
+  @apply -z-1 absolute;
+}

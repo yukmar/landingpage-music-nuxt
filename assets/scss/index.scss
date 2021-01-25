@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+* {
+  font-family: Poppins;
+  @apply text-white;
+}
+
+body {
+  background-color: $bgColor;
+  @apply m-0 p-0;
+}
+
+#app {
+  position: relative;
+  @apply min-h-screen w-full flex flex-col items-center min-w-full overflow-hidden;
+}
+
+@layer components {
+  .title {
+    @apply text-4xl sm:text-5xl sm:font-medium;
+  }
+
+  .subtitle {
+    @apply text-base sm:text-xl;
+  }
+
+  .button {
+    background-color: $btn-bgPrimary;
+    @apply p-2 rounded-md;
+  }
+
+  .headline {
+    @apply flex flex-col order-1 gap-4
+    mt-12
+    leading-4;
+
+    @screen sm {
+      @apply flex-grow 
+      self-center order-2
+      justify-start items-start gap-10
+      mt-0 ml-0
+      text-left leading-none;
+    }
+  }
+
+  .navbar {
+    @apply flex flex-row w-full justify-around sm:justify-between sm:w-4/5 sm:pt-1;
+    &__nav {
+      @apply flex flex-row w-full justify-center;
+      @screen sm {
+        @apply items-center w-auto;
+      }
+      &-left,
+      &-right {
+        @apply flex;
+      }
+      &-left {
+        @apply sm:self-start;
+      }
+      &-right {
+        @apply sm:self-end;
+      }
+      &-logo {
+        @apply flex flex-row items-center gap-2;
+        @screen sm {
+          @apply no-underline gap-3 text-base;
+        }
+        img {
+          @apply w-10 h-10;
+        }
+      }
+      &-item {
+        @apply px-2 py-4;
+        @screen sm {
+          @apply px-4 flex flex-col justify-center items-center gap-2 text-base h-full;
+        }
+        svg {
+          @apply sm:w-6;
+        }
+        &:hover {
+          background-color: $bgColor-2nd-hover;
+        }
+      }
+    }
+  }
+}
